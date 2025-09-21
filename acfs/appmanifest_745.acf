@@ -1,0 +1,41 @@
+"AppState"
+{
+	"appid"		"745"
+	"universe"		"1"
+	"LauncherPath"		"C:\\Program Files (x86)\\Steam\\steam.exe"
+	"name"		"Counter-Strike: Global Offensive - SDK"
+	"StateFlags"		"4"
+	"installdir"		"Counter-Strike Global Offensive"
+	"lastupdated"		"1756630505"
+	"LastPlayed"		"1756630511"
+	"SizeOnDisk"		"158626761"
+	"StagingSize"		"0"
+	"buildid"		"11399846"
+	"LastOwner"		"76561198130339455"
+	"DownloadType"		"1"
+	"UpdateResult"		"0"
+	"BytesToDownload"		"25106464"
+	"BytesDownloaded"		"25106464"
+	"BytesToStage"		"158626761"
+	"BytesStaged"		"158626761"
+	"TargetBuildID"		"11399846"
+	"AutoUpdateBehavior"		"0"
+	"AllowOtherDownloadsWhileRunning"		"0"
+	"ScheduledAutoUpdate"		"0"
+	"InstalledDepots"
+	{
+		"745"
+		{
+			"manifest"		"7626467885920542352"
+			"size"		"158626761"
+		}
+	}
+	"UserConfig"
+	{
+		"language"		"english"
+	}
+	"MountedConfig"
+	{
+		"language"		"english"
+	}
+}

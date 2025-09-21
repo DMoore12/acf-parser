@@ -1,0 +1,81 @@
+"AppState"
+{
+	"appid"		"730"
+	"universe"		"1"
+	"LauncherPath"		"C:\\Program Files (x86)\\Steam\\steam.exe"
+	"name"		"Counter-Strike 2"
+	"StateFlags"		"4"
+	"installdir"		"Counter-Strike Global Offensive"
+	"lastupdated"		"1758252443"
+	"LastPlayed"		"1758430566"
+	"SizeOnDisk"		"58882015666"
+	"StagingSize"		"0"
+	"buildid"		"20040392"
+	"LastOwner"		"76561198130339455"
+	"DownloadType"		"3"
+	"UpdateResult"		"0"
+	"BytesToDownload"		"51584"
+	"BytesDownloaded"		"51584"
+	"BytesToStage"		"105652"
+	"BytesStaged"		"105652"
+	"TargetBuildID"		"0"
+	"AutoUpdateBehavior"		"0"
+	"AllowOtherDownloadsWhileRunning"		"0"
+	"ScheduledAutoUpdate"		"0"
+	"InstalledDepots"
+	{
+		"732"
+		{
+			"manifest"		"3794636196675402601"
+			"size"		"8"
+		}
+		"731"
+		{
+			"manifest"		"8593492943720630015"
+			"size"		"8"
+		}
+		"735"
+		{
+			"manifest"		"1905286310622212711"
+			"size"		"8"
+		}
+		"2347770"
+		{
+			"manifest"		"5422453633692855293"
+			"size"		"48989642342"
+		}
+		"2347771"
+		{
+			"manifest"		"526942087150382726"
+			"size"		"7173786633"
+		}
+		"2347774"
+		{
+			"manifest"		"3473127722185546859"
+			"size"		"1042918734"
+		}
+		"2347779"
+		{
+			"manifest"		"1579379367575629631"
+			"size"		"1675678702"
+			"dlcappid"		"2279721"
+		}
+	}
+	"SharedDepots"
+	{
+		"228988"		"228980"
+		"228990"		"228980"
+	}
+	"UserConfig"
+	{
+		"language"		"english"
+		"DisabledDLC"		""
+		"optionaldlc"		"2279721"
+	}
+	"MountedConfig"
+	{
+		"language"		"english"
+		"DisabledDLC"		""
+		"optionaldlc"		"2279721"
+	}
+}

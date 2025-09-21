@@ -1,0 +1,93 @@
+"AppState"
+{
+	"appid"		"250820"
+	"universe"		"1"
+	"LauncherPath"		"C:\\Program Files (x86)\\Steam\\steam.exe"
+	"name"		"SteamVR"
+	"StateFlags"		"4"
+	"installdir"		"SteamVR"
+	"lastupdated"		"1755553367"
+	"LastPlayed"		"1756431655"
+	"SizeOnDisk"		"5490582772"
+	"StagingSize"		"0"
+	"buildid"		"19617312"
+	"LastOwner"		"76561198130339455"
+	"DownloadType"		"1"
+	"UpdateResult"		"0"
+	"BytesToDownload"		"523808"
+	"BytesDownloaded"		"523808"
+	"BytesToStage"		"66738975"
+	"BytesStaged"		"66738975"
+	"TargetBuildID"		"19617312"
+	"AutoUpdateBehavior"		"2"
+	"AllowOtherDownloadsWhileRunning"		"0"
+	"ScheduledAutoUpdate"		"0"
+	"InstalledDepots"
+	{
+		"250821"
+		{
+			"manifest"		"5205117492088164478"
+			"size"		"944848018"
+		}
+		"250824"
+		{
+			"manifest"		"68568225326918729"
+			"size"		"634392137"
+		}
+		"250825"
+		{
+			"manifest"		"6878307259591782433"
+			"size"		"0"
+		}
+		"250827"
+		{
+			"manifest"		"9126840328386630080"
+			"size"		"4834763"
+		}
+		"250828"
+		{
+			"manifest"		"7972087267127211047"
+			"size"		"0"
+		}
+		"250829"
+		{
+			"manifest"		"8853391724673135535"
+			"size"		"22"
+		}
+		"250830"
+		{
+			"manifest"		"7391958373704501609"
+			"size"		"3356665389"
+		}
+		"250831"
+		{
+			"manifest"		"4610675545635483043"
+			"size"		"342878509"
+		}
+		"250833"
+		{
+			"manifest"		"8084172187417437723"
+			"size"		"206963956"
+		}
+	}
+	"InstallScripts"
+	{
+		"250821"		"installscript_817940.vdf"
+		"250831"		"tools\\steamvr_environments\\game\\steamtours\\install.vdf"
+	}
+	"SharedDepots"
+	{
+		"228985"		"228980"
+		"228988"		"228980"
+		"228989"		"228980"
+		"228990"		"228980"
+	}
+	"UserConfig"
+	{
+		"language"		"english"
+	}
+	"MountedConfig"
+	{
+		"language"		"english"
+	}
+}

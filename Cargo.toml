@@ -1,0 +1,13 @@
+[package]
+name = "acf-parser"
+authors = ["Dawson Moore"]
+description = "A simple ACF parser, targeted at reading Valve .acf configs"
+license = "MIT"
+homepage = "https://github.com/DMoore12/acf-parser"
+repository = "https://github.com/DMoore12/acf-parser"
+version = "0.1.0"
+edition = "2021"
+readme = "README.md"
+
+[dependencies]
+chumsky = "0.11.1"
