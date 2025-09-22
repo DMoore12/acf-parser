@@ -2,7 +2,7 @@
 
 [![crates.io](https://img.shields.io/crates/v/acf-parser.svg)](https://crates.io/crates/acf-parser)
 [![docs](https://docs.rs/acf-parser/badge.svg)](https://docs.rs/acf-parser)
-[![license](https://img.shields.io/crates/l/acf-parser)](https://github.com/DMoore12/acf-parser#license)
+[![license](https://img.shields.io/github/license/dmoore12/acf-parser)](https://github.com/DMoore12/acf-parser#license)
 [![crates.io](https://img.shields.io/crates/d/acf-parser.svg)](https://crates.io/crates/acf-parser)
 
 *A simple ACF parser, targeted at reading Valve configuration files*
