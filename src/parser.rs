@@ -1,32 +1,38 @@
 use crate::errors::*;
 use chumsky::prelude::*;
 use std::fs;
+use std::collections::HashMap;
 
 // Error handling
 type Result<T> = std::result::Result<T, AcfError>;
 
-// Parse primitives
 /// Representation of an ACF's file content
+/// 
+/// Results are returned in the form of a hash map. Valve ACF files are expected
+/// to have a root level entry (`AppState`) containing the app's ID, path, name,
+/// and filesystem specific information
 #[derive(Clone, Debug, PartialEq, Eq, Default)]
 pub struct Acf {
     /// A list of entries. Valve ACF files should have at least `AppState`
-    entries: Vec<Entry>,
+    pub entries: Vec<Entry>,
 }
 
 /// Representation of an individual ACF entry
 #[derive(Clone, Debug, PartialEq, Eq, Default)]
-struct Entry {
+pub struct Entry {
     /// Name of the entry
-    name: String,
+    pub name: String,
 
     // A list of expressions
-    expressions: Vec<Expr>,
+    pub expressions: HashMap<String, String>,
 
     // A list of sub-entries
-    entries: Vec<Entry>,
+    pub entries: Vec<Entry>,
 }
 
 /// Representation of an individual ACF expression (of form "*."\s+"*.")
+/// 
+/// > NOTE: This is an internal representation that is not shown to the user
 #[derive(Clone, Debug, PartialEq, Eq)]
 struct Expr {
     /// Name of the expression
@@ -81,12 +87,19 @@ fn entry_parser<'src>() -> impl Parser<'src, &'src str, Entry> {
         str_parser()
             .padded()
             .then_ignore(just("{").padded())
-            .then(expr_parser().padded().repeated().collect::<Vec<_>>())
+            .then(
+                expr_parser().padded().repeated().collect::<Vec<_>>()
+            )
             .then(rec_parser.padded().repeated().collect::<Vec<_>>())
             .then_ignore(just("}").padded())
             .map(|((name, expressions), entries)| Entry {
                 name,
-                expressions,
+                expressions: {
+                    let names = expressions.iter().map(|expr| expr.name.clone());
+                    let values = expressions.iter().map(|expr| expr.value.clone());
+
+                    names.zip(values).collect()
+                },
                 entries,
             })
             .boxed()
@@ -135,9 +148,8 @@ mod tests {
         let result = result.unwrap();
         let root_entry = &result.entries[0];
         assert_eq!(root_entry.name, "AppState");
-        let id_expr = &root_entry.expressions[0];
-        assert_eq!(id_expr.name, "appid");
-        assert_eq!(id_expr.value, "730");
+        let expressions = &root_entry.expressions;
+        assert_eq!(expressions["appid"], "730");
     }
 
     #[test]
@@ -147,11 +159,10 @@ mod tests {
         let result = result.unwrap();
         let root_entry = &result.entries[0];
         assert_eq!(root_entry.name, "AppState");
-        let id_expr = &root_entry.expressions[0];
-        assert_eq!(id_expr.name, "appid");
-        assert_eq!(id_expr.value, "730");
-        let name_expr = &root_entry.expressions[3];
-        assert_eq!(name_expr.name, "name");
-        assert_eq!(name_expr.value, "Counter-Strike 2");
+        let expressions = &root_entry.expressions;
+        assert_eq!(expressions["appid"], "730");
+        assert_eq!(expressions["universe"], "1");
+        assert_eq!(expressions["LauncherPath"], "C:\\\\Program Files (x86)\\\\Steam\\\\steam.exe");
+        assert_eq!(expressions["name"], "Counter-Strike 2");
     }
 }

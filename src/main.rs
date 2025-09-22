@@ -1,11 +1,13 @@
 use acf_parser::prelude::*;
 
 fn main() {
-    let file = "./acfs/appmanifest_730.acf";
-    let result = parse_acf(file);
+    let result = parse_acf("./acfs/simple.acf");
 
-    match result {
-        Ok(val) => println!("{:#?}", val),
-        Err(e) => println!("Parsing error: {e}"),
-    }
+    let result = result.unwrap();
+    let root_entry = &result.entries[0];
+    let root_contents = &root_entry.expressions;
+
+    println!("Found root entry '{}'", root_entry.name);
+    println!("App name: {}", root_contents["name"]);
+    println!("App ID: {}", root_contents["appid"]);
 }

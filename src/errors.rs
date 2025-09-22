@@ -2,7 +2,7 @@ use chumsky::prelude::SimpleSpan;
 use std::error;
 use std::fmt;
 
-/// Representation of errors encountered during .acf parsing
+/// Top level error type
 #[derive(Debug, PartialEq, Eq, Default)]
 pub enum AcfError {
     /// An error occurred reading a file
@@ -36,6 +36,7 @@ impl error::Error for AcfError {
     }
 }
 
+/// Representation of a filesystem error
 #[derive(Debug, PartialEq, Eq, Default)]
 pub enum IOError {
     /// An unknown/uncategorized error
@@ -59,6 +60,7 @@ impl error::Error for IOError {
     }
 }
 
+/// Representation of a parser error
 #[derive(Debug, PartialEq, Eq, Default)]
 pub enum ParseError {
     /// A closing brace was not found
